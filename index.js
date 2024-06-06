@@ -46,4 +46,6 @@ telegramBot.on('message', async (msg) => {
 
 console.log('Telegram Bot started.');
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000, () => {
+    console.log(`Example app listening on port ${process.env.PORT || 3000}!`);
+});
