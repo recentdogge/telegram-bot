@@ -13,7 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.18.0",
+    "cors": "^2.8.5",
     "discord.js": "^14.14.1",
+    "express": "^4.19.2",
     "node-telegram-bot-api": "^0.65.1"
   }
 }

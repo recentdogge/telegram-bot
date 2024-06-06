@@ -1,5 +1,14 @@
 import TelegramBot from 'node-telegram-bot-api';
 import Anthropic from '@anthropic-ai/sdk';
+import express from 'express'
+import cors from 'cors'
+
+const app = express();
+app.use(cors());
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
 
 const telegramBot = new TelegramBot(process.env.TELEGRAM_TOKEN, { polling: true });
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPISM_API_KEY });
@@ -34,4 +43,7 @@ telegramBot.on('message', async (msg) => {
     }
 });
 
+
 console.log('Telegram Bot started.');
+
+app.listen(process.env.PORT || 3000);
